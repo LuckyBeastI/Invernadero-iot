@@ -1,0 +1,43 @@
+{
+  "rules": {
+    "usuarios": {
+      "$rut": {
+        ".read": "auth != null",
+        ".write": "auth != null && !data.exists()",
+        ".validate": "newData.hasChildren(['rut', 'nombre', 'apellido', 'correo', 'cargo', 'permiso', 'hash', 'sal'])",
+        "rut": { ".validate": "newData.val() === $rut" },
+        "nombre": { ".validate": "newData.isString() && newData.val().length > 0 && newData.val().length <= 50" },
+        "apellido": { ".validate": "newData.isString() && newData.val().length > 0 && newData.val().length <= 50" },
+        "correo": { ".validate": "newData.isString() && newData.val().contains('@') && newData.val().length <= 120" },
+        "cargo": { ".validate": "newData.isString() && newData.val().length <= 40" },
+        "permiso": { ".validate": "newData.val() === 'monitor'" },
+        "hash": { ".validate": "newData.isString() && newData.val().length <= 100" },
+        "sal": { ".validate": "newData.isString() && newData.val().length <= 50" },
+        "creado": { ".validate": "newData.isNumber()" },
+        "$otro": { ".validate": false }
+      }
+    },
+    "invernadero": {
+      ".read": "auth != null",
+      "estado": {
+        ".write": "auth != null",
+        "temperatura": { ".validate": "newData.isNumber() && newData.val() >= -20 && newData.val() <= 80" },
+        "ventanaAbierta": { ".validate": "newData.isBoolean()" },
+        "actualizado": { ".validate": "newData.isNumber()" },
+        "$otro": { ".validate": false }
+      },
+      "acciones": {
+        "$id": {
+          ".write": "auth != null && !data.exists()",
+          ".validate": "newData.hasChildren(['fecha', 'rut', 'tipo', 'accion', 'temperatura'])",
+          "fecha": { ".validate": "newData.isNumber()" },
+          "rut": { ".validate": "newData.isString() && root.child('usuarios').child(newData.val()).exists()" },
+          "tipo": { ".validate": "newData.val() === 'apertura' || newData.val() === 'cierre' || newData.val() === 'alerta' || newData.val() === 'lectura'" },
+          "accion": { ".validate": "newData.isString() && newData.val().length <= 80" },
+          "temperatura": { ".validate": "newData.isNumber() && newData.val() >= -20 && newData.val() <= 80" },
+          "$otro": { ".validate": false }
+        }
+      }
+    }
+  }
+}

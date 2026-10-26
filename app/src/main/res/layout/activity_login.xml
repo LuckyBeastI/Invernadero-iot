@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blanco"
+    android:fillViewport="true"
+    tools:context=".Login">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:gravity="center"
+            android:text="🌱 Mini-Invernadero IoT"
+            android:textColor="@color/azul_titulo"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:gravity="center"
+            android:text="Login"
+            android:textColor="@color/negro"
+            android:textSize="32sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/txtRut"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/borde_campo"
+            android:gravity="center"
+            android:hint="Rut (12345678-5)"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:maxLines="1"
+            android:textColor="@color/negro"
+            android:textColorHint="@color/gris_texto" />
+
+        <EditText
+            android:id="@+id/txtClave"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/borde_campo"
+            android:gravity="center"
+            android:hint="Contraseña"
+            android:importantForAutofill="no"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:textColor="@color/negro"
+            android:textColorHint="@color/gris_texto" />
+
+        <Button
+            android:id="@+id/btnIniciar"
+            android:layout_width="200dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="@color/negro_boton"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:text="Iniciar Sesión"
+            android:textColor="@color/blanco"
+            android:textSize="16sp"
+            app:cornerRadius="6dp"
+            android:layout_gravity="center_horizontal" />
+
+        <Button
+            android:id="@+id/btnCrear"
+            android:layout_width="200dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="@color/negro_boton"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:text="Crear Cuenta"
+            android:textColor="@color/blanco"
+            android:textSize="16sp"
+            app:cornerRadius="6dp"
+            android:layout_gravity="center_horizontal" />
+
+        <ProgressBar
+            android:id="@+id/progreso"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:visibility="gone" />
+
+    </LinearLayout>
+</ScrollView>

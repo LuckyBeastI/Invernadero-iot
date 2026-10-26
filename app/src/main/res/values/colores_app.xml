@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="azul_titulo">#0D1B8C</color>
+    <color name="negro">#000000</color>
+    <color name="blanco">#FFFFFF</color>
+    <color name="negro_boton">#000000</color>
+    <color name="rojo_volver">#B00000</color>
+    <color name="gris_circulo">#E6E6E6</color>
+    <color name="gris_borde">#8A8A8A</color>
+    <color name="gris_texto">#666666</color>
+    <color name="verde_ok">#2E7D32</color>
+    <color name="rojo_alerta">#C62828</color>
+</resources>

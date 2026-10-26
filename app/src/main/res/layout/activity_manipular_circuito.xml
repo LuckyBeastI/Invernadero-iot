@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blanco"
+    android:fillViewport="true"
+    tools:context=".ManipularCircuito">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:id="@+id/tvNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/azul_titulo"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            tools:text="Nombre Usuario" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:gravity="center"
+            android:text="Manipular Circuito"
+            android:textColor="@color/negro"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvTemperatura"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/verde_ok"
+            android:textSize="44sp"
+            android:textStyle="bold"
+            tools:text="24,5 °C" />
+
+        <TextView
+            android:id="@+id/tvVentana"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:gravity="center"
+            android:textColor="@color/negro"
+            android:textSize="18sp"
+            tools:text="Ventana: CERRADA" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnAbrir"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:backgroundTint="@color/gris_circulo"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:text="Abrir"
+                android:textColor="@color/negro"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:cornerRadius="60dp"
+                app:strokeColor="@color/gris_borde"
+                app:strokeWidth="2dp"
+                android:layout_marginEnd="24dp" />
+
+            <Button
+                android:id="@+id/btnCerrar"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:backgroundTint="@color/gris_circulo"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:text="Cerrar"
+                android:textColor="@color/negro"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:cornerRadius="60dp"
+                app:strokeColor="@color/gris_borde"
+                app:strokeWidth="2dp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvAviso"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:gravity="center"
+            android:text="Solo lectura: su cuenta no tiene permiso para manipular el invernadero."
+            android:textColor="@color/rojo_alerta"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+        <LinearLayout
+            android:id="@+id/layoutSimulador"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/borde_campo"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <TextView
+                android:id="@+id/tvTempSim"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/negro"
+                android:textStyle="bold"
+                tools:text="Simular lectura: 22,0 °C" />
+
+            <com.google.android.material.slider.Slider
+                android:id="@+id/sliderTemp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:stepSize="0.5"
+                android:value="22"
+                android:valueFrom="10"
+                android:valueTo="45" />
+
+            <Button
+                android:id="@+id/btnPublicar"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="4dp"
+                android:backgroundTint="@color/negro_boton"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:text="Publicar Lectura del Sensor"
+                android:textColor="@color/blanco"
+                android:textSize="16sp"
+                app:cornerRadius="6dp" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnVolver"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/rojo_volver"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:text="Volver"
+            android:textColor="@color/blanco"
+            android:textSize="16sp"
+            app:cornerRadius="6dp" />
+
+    </LinearLayout>
+</ScrollView>

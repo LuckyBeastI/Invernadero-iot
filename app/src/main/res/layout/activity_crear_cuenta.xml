@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blanco"
+    android:fillViewport="true"
+    tools:context=".CrearCuenta">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:text="Crear Cuenta"
+            android:textColor="@color/negro"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/txtRut"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/borde_campo"
+            android:gravity="center"
+            android:hint="Rut (12345678-5)"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:maxLines="1"
+            android:textColor="@color/negro"
+            android:textColorHint="@color/gris_texto" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/txtNombre"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/borde_campo"
+                android:gravity="center"
+                android:hint="Nombre"
+                android:importantForAutofill="no"
+                android:inputType="textPersonName|textCapWords"
+                android:maxLines="1"
+                android:textColor="@color/negro"
+                android:textColorHint="@color/gris_texto"
+                android:layout_weight="1"
+                android:layout_marginEnd="6dp" />
+
+            <EditText
+                android:id="@+id/txtApellido"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/borde_campo"
+                android:gravity="center"
+                android:hint="Apellido"
+                android:importantForAutofill="no"
+                android:inputType="textPersonName|textCapWords"
+                android:maxLines="1"
+                android:textColor="@color/negro"
+                android:textColorHint="@color/gris_texto"
+                android:layout_weight="1"
+                android:layout_marginStart="6dp" />
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/txtCorreo"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/borde_campo"
+            android:gravity="center"
+            android:hint="Correo Electrónico"
+            android:importantForAutofill="no"
+            android:inputType="textEmailAddress"
+            android:maxLines="1"
+            android:textColor="@color/negro"
+            android:textColorHint="@color/gris_texto" />
+
+        <Spinner
+            android:id="@+id/spCargo"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/borde_campo"
+            android:spinnerMode="dropdown" />
+
+        <EditText
+            android:id="@+id/txtClave"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/borde_campo"
+            android:gravity="center"
+            android:hint="Contraseña"
+            android:importantForAutofill="no"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:textColor="@color/negro"
+            android:textColorHint="@color/gris_texto" />
+
+        <EditText
+            android:id="@+id/txtRepetir"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/borde_campo"
+            android:gravity="center"
+            android:hint="Repetir Contraseña"
+            android:importantForAutofill="no"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:textColor="@color/negro"
+            android:textColorHint="@color/gris_texto" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="Mínimo 8 caracteres, con letras y números."
+            android:textColor="@color/gris_texto"
+            android:textSize="12sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnRegistrar"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_marginTop="12dp"
+                android:backgroundTint="@color/negro_boton"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:text="Registrar"
+                android:textColor="@color/blanco"
+                android:textSize="16sp"
+                app:cornerRadius="6dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="6dp" />
+
+            <Button
+                android:id="@+id/btnVolver"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_marginTop="12dp"
+                android:backgroundTint="@color/rojo_volver"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:text="Volver"
+                android:textColor="@color/blanco"
+                android:textSize="16sp"
+                app:cornerRadius="6dp"
+                android:layout_weight="1"
+                android:layout_marginStart="6dp" />
+
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/progreso"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:visibility="gone" />
+
+    </LinearLayout>
+</ScrollView>

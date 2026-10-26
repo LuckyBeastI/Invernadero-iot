@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blanco"
+    android:orientation="vertical"
+    android:padding="24dp"
+    tools:context=".Acciones">
+
+        <TextView
+            android:id="@+id/tvNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/azul_titulo"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            tools:text="Nombre Usuario" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:gravity="center"
+            android:text="Ver Acciones"
+            android:textColor="@color/negro"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvVacio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Aún no hay acciones registradas."
+        android:textColor="@color/gris_texto"
+        android:visibility="gone" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvAcciones"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/borde_campo"
+        android:padding="4dp"
+        tools:itemCount="3"
+        tools:listitem="@layout/item_accion" />
+
+        <Button
+            android:id="@+id/btnVolver"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="@color/rojo_volver"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:text="Volver"
+            android:textColor="@color/blanco"
+            android:textSize="16sp"
+            app:cornerRadius="6dp" />
+
+</LinearLayout>
